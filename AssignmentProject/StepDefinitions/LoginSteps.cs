@@ -7,42 +7,36 @@ namespace AssignmentProject.StepDefinitions
 {
     [Binding]
     public class LoginSteps : Hooks
-
     {
         LoginPage loginPage;
+
 
         public LoginSteps()
         {
             loginPage = new LoginPage();
         }
 
+
         [Given(@"I navigate to the homepage")]
         public void GivenINavigateToTheHomepage()
         {
-            driver.Navigate().GoToUrl("http://www.giftrete.com")      
-         }
-            
-
-        [Given(@"I click on the login link")]
-        public void GivenIClickOnTheLoginLink()
+            driver.Navigate().GoToUrl("http://giftrete.com");
+        }
+        
+        [When(@"I click on the login link")]
+        public void WhenIClickOnTheLoginLink()
         {
             loginPage.ClickLogin();
         }
         
-        [Given(@"I am on the login page")]
-        public void GivenIAmOnTheLoginPage()
-        {
-            ScenarioContext.Current.Pending();
-        }
-        
-        [When(@"I enter my valid email address")]
-        public void WhenIEnterMyValidEmailAddress()
+        [When(@"I enter my registered email address")]
+        public void WhenIEnterMyRegisteredEmailAddress()
         {
             loginPage.TypeEmail();
         }
         
-        [When(@"I enter my corresponding valid password")]
-        public void WhenIEnterMyCorrespondingValidPassword()
+        [When(@"I enter my registered password")]
+        public void WhenIEnterMyRegisteredPassword()
         {
             loginPage.TypePassword();
         }

@@ -7,10 +7,17 @@ namespace AssignmentProject.StepDefinitions
     [Binding]
     public class RegistrationSteps : Hooks
     {
+
+        [Given(@"I nagigate to the homepage")]
+        public void GivenIAmOnTheRegistrationPage()
+        {
+            driver.Navigate().GoToUrl("http://giftrete.com");
+        }
+
         [Given(@"I click on the register link")]
         public void GivenIClickOnTheRegisterLink()
         {
-            ScenarioContext.Current.Pending();
+            driver.Navigate().GoToUrl("http://giftrete.com");
         }
         
         [Given(@"I am on the registration page")]

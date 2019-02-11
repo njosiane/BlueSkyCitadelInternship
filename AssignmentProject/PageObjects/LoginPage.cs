@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace AssignmentProject.PageObjects
 {
-    public class LoginPage
+    public class LoginPage : Hooks
     {
         //driver.FindElement(By.LinkText("Login")
         [FindsBy(How = How.LinkText, Using = "Login")]
@@ -24,26 +24,36 @@ namespace AssignmentProject.PageObjects
         private IWebElement emailElement;
 
         public void TypeEmail()
-
         {
-            emailElement.SendKeys("test@test.com);
+            emailElement.SendKeys("automationexpert@mailinator.com");
         }
 
+
         [FindsBy(How = How.ClassName, Using = "le-input")]
-        private IWebElement password;
+        private IWebElement passwordElement;
 
         public void TypePassword()
         {
-            passwordElement.Sendkeys("myPasswordisSecure");
+            passwordElement.SendKeys("automationexpert");
         }
 
         [FindsBy(How = How.CssSelector, Using = "#login-form > div.buttons-holder.text-center > button")]
-        private IWebElement signin;
+        private IWebElement securesignin;
 
-        public void ClickSignin();
+        public LoginPage()
         {
-            signin.Click();
+            PageFactory.InitElements(driver, this);
         }
+
+
+        public void ClickSignin()
+        {
+            securesignin.Click();
+        }
+        
+        
+            
+    }
 
 
 

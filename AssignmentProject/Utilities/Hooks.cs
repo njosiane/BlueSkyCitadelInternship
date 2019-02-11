@@ -20,7 +20,7 @@ namespace AssignmentProject.Utilities
         [BeforeScenario]
         public void BeforeScenario()
         {
-            //ChromeDriver driver = new ChromeDriver();
+            ChromeDriver driver = new ChromeDriver();
             driver = new ChromeDriver();
             //driverFirefox = new FirefoxDriver();
             //driverIE = new InternetExplorerDriver();

@@ -6,10 +6,9 @@
 @mytag
 Scenario: Login with valid details
 	Given I navigate to the homepage
-	And I click on the login link
-	And I am on the login page
-	When I enter my valid email address
-	And I enter my corresponding valid password
+	When I click on the login link
+	And I enter my registered email address
+	And I enter my registered password
 	And I click on the secure sign in button
 	Then I am logged in
 	And my account page is displayed
