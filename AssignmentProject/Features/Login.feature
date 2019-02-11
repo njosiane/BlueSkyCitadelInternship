@@ -11,4 +11,4 @@ Scenario: Login with valid details
 	And I enter my registered password
 	And I click on the secure sign in button
 	Then I am logged in
-	And my account page is displayed
+	

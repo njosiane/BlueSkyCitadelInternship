@@ -20,7 +20,8 @@ namespace AssignmentProject.StepDefinitions
         [Given(@"I navigate to the homepage")]
         public void GivenINavigateToTheHomepage()
         {
-            driver.Navigate().GoToUrl("http://giftrete.com");
+            Hooks.Driver.Navigate().GoToUrl("http://www.giftrete.com");
+            Hooks.Driver.Manage().Window.Maximise();
         }
         
         [When(@"I click on the login link")]
@@ -50,13 +51,12 @@ namespace AssignmentProject.StepDefinitions
         [Then(@"I am logged in")]
         public void ThenIAmLoggedIn()
         {
-            ScenarioContext.Current.Pending();
+            Thread.Sleep(30000);
+
+            loginPage.IsloginErrorMsgDisplayed();
+            
         }
         
-        [Then(@"my account page is displayed")]
-        public void ThenMyAccountPageIsDisplayed()
-        {
-            ScenarioContext.Current.Pending();
-        }
+        
     }
 }

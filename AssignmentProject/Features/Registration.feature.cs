@@ -80,31 +80,25 @@ namespace AssignmentProject.Features
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 9
- testRunner.Given("I navigate to the homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I navigate to homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
- testRunner.And("I click on the register link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I click on register link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 11
- testRunner.And("I am on the registration page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I enter my first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.When("I enter my first name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 13
  testRunner.And("I enter my last name", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 13
+ testRunner.And("I enter my email", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 14
- testRunner.And("I enter my email \"test@giftrete.com\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 15
  testRunner.And("I enter my mobile number", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 16
+#line 15
  testRunner.And("I enter my password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 17
+#line 16
  testRunner.And("I confirm my password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.And("I click on sign up button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 18
- testRunner.And("I click on the captcha box", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 19
- testRunner.And("I click on the sign up button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 20
  testRunner.Then("I am registered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 21
- testRunner.And("a thank you message is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

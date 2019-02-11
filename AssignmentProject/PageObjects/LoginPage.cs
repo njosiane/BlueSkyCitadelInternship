@@ -37,20 +37,20 @@ namespace AssignmentProject.PageObjects
             passwordElement.SendKeys("automationexpert");
         }
 
+
         [FindsBy(How = How.CssSelector, Using = "#login-form > div.buttons-holder.text-center > button")]
-        private IWebElement securesignin;
+        private IWebElement secureSignIn;
 
-        public LoginPage()
+        public void ClickSecureSignIn()
         {
-            PageFactory.InitElements(driver, this);
+            secureSignIn.Click();
         }
 
-
-        public void ClickSignin()
+        internal object successMessageIsDisplayed()
         {
-            securesignin.Click();
+            throw new NotImplementedException();
         }
-        
+    }
         
             
     }

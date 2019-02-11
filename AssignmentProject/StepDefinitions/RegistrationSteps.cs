@@ -1,89 +1,91 @@
 ﻿using AssignmentProject.Utilities;
 using System;
 using TechTalk.SpecFlow;
+using AssignmentProject.PageObjects;
+using NUnit.Framework;
+using System.Threading;
 
 namespace AssignmentProject.StepDefinitions
 {
     [Binding]
-    public class RegistrationSteps : Hooks
+    public class RegistrationSteps
+
     {
+        RegistrationPage registrationPage;
 
-        [Given(@"I nagigate to the homepage")]
-        public void GivenIAmOnTheRegistrationPage()
+        public RegistrationSteps()
         {
-            driver.Navigate().GoToUrl("http://giftrete.com");
-        }
-
-        [Given(@"I click on the register link")]
-        public void GivenIClickOnTheRegisterLink()
-        {
-            driver.Navigate().GoToUrl("http://giftrete.com");
+            registrationPage = new RegistrationPage();
         }
         
-        [Given(@"I am on the registration page")]
-        public void GivenIAmOnTheRegistrationPage()
+        [Given(@"I navigate to homepage")]
+        public void GivenINavigateToHomepage()
         {
-            ScenarioContext.Current.Pending();
+            Hooks.Driver.Navigate().GoToUrl("http://www.giftrete.com");
+            Hooks.Driver.Manage().Window.Maximise();
         }
+
+        [When(@"I click on register link")]
+        public void WhenIClickOnRegisterLink()
+        {
+            registrationPage.ClickOnRegister();
+        }
+        
         
         [When(@"I enter my first name")]
         public void WhenIEnterMyFirstName()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterFirstName();
         }
         
         [When(@"I enter my last name")]
         public void WhenIEnterMyLastName()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterFirstName();
         }
         
-        [When(@"I enter my email ""(.*)""")]
-        public void WhenIEnterMyEmail(string p0)
+        [When(@"I enter my email")]
+        public void WhenIEnterMyEmail()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterEmailAddress("automationexpert@mailinator.com");
         }
         
         [When(@"I enter my mobile number")]
         public void WhenIEnterMyMobileNumber()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterMobileNumber("07111111111");
         }
         
         [When(@"I enter my password")]
         public void WhenIEnterMyPassword()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterPassword("automationexpert");
         }
         
         [When(@"I confirm my password")]
         public void WhenIConfirmMyPassword()
         {
-            ScenarioContext.Current.Pending();
+            registrationPage.EnterConfirmPassword("automationexpert");
         }
         
-        [When(@"I click on the captcha box")]
-        public void WhenIClickOnTheCaptchaBox()
-        {
-            ScenarioContext.Current.Pending();
-        }
         
-        [When(@"I click on the sign up button")]
-        public void WhenIClickOnTheSignUpButton()
+        [When(@"I click on sign up button")]
+        public void WhenIClickOnSignUpButton()
         {
-            ScenarioContext.Current.Pending();
+            signup.Click();
         }
         
         [Then(@"I am registered")]
         public void ThenIAmRegistered()
         {
-            ScenarioContext.Current.Pending();
+            Thread.Sleep(30000);
+            
+            //Assert.Equals(registrationPage.successMessageIsDisplayed(), true);
+            //Assert.IsTrue(registrationPage.successMessageIsDisplayed(), "Error Message: Registration failed");
+
+            registrationPage.successMessageIsDisplayed().Should().BeTrue("Error Message: Registration failed");
+            //registrationPage.successMessageIsDisplayed().Should().Be(true)("Error Message: Registration failed")
         }
         
-        [Then(@"a thank you message is displayed")]
-        public void ThenAThankYouMessageIsDisplayed()
-        {
-            ScenarioContext.Current.Pending();
-        }
     }
 }
